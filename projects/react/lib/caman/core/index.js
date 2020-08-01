@@ -114,13 +114,14 @@ class Caman extends Module {
   // @return [Caman] Initialized Caman instance.
   constructor() {
     {
-      // Hack: trick Babel/TypeScript into allowing this before super.
-      if (false) { super(); }
-      let thisFn = (() => { return this; }).toString();
-      let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;?/)[1];
-      eval(`${thisName} = this;`);
+      super()
+      // // Hack: trick Babel/TypeScript into allowing this before super.
+      // if (false) { super(); }
+      // let thisFn = (() => { return this; }).toString();
+      // let thisName = thisFn.match(/return (?:_assertThisInitialized\()*(\w+)\)*;?/)[1];
+      // // eval(`${thisName} = this;`);
+      // Function(`${thisName} = this;`)();
     }
-    if (arguments.length === 0) { throw "Invalid arguments"; }
 
     if (this instanceof Caman) {
       // We have to do this to avoid polluting the global scope
