@@ -114,7 +114,8 @@ class Caman extends Module {
   // @return [Caman] Initialized Caman instance.
   constructor() {
     {
-      super()
+      super();
+
       // // Hack: trick Babel/TypeScript into allowing this before super.
       // if (false) { super(); }
       // let thisFn = (() => { return this; }).toString();
