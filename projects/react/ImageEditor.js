@@ -82,7 +82,7 @@ export default class extends Component {
   loadImage = () => {
     let { src } = this.props;
     const { reduceBeforeEdit: { mode, widthLimit, heightLimit } = {}, watermark } = this.state;
-    
+
     if (src instanceof Blob) { src = URL.createObjectURL(src); }
 
     const splittedSrc = src.split('/');
@@ -229,7 +229,10 @@ export default class extends Component {
       });
     } else {
       this.props.onComplete({ status: 'success', canvas });
-      this.props.onClose();
+
+      if(this.props.closeAfterDownload) {
+        this.props.onClose();
+      }
     }
   }
 

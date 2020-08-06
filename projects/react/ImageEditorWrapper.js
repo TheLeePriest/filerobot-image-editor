@@ -58,7 +58,7 @@ class ImageEditorWrapper extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.show !== prevProps.show) {
       if (this.props.show) { this.open(this.props.src); } else { this.close(); }
-    }    
+    }
   }
 
   processConfig = (config) => {
@@ -98,7 +98,7 @@ class ImageEditorWrapper extends Component {
 
   render() {
     const { isVisible, src, config, t, theme } = this.state;
-    const { onComplete = () => {}, onBeforeComplete, closeOnLoad, showInModal = true } = this.props;
+    const { onComplete = () => {}, onBeforeComplete, closeOnLoad, showInModal = true, closeAfterDownload = true } = this.props;
 
     if (!src || !isVisible || isServerSide) return null;
 
@@ -112,6 +112,7 @@ class ImageEditorWrapper extends Component {
           onComplete={onComplete}
           onBeforeComplete={onBeforeComplete}
           onClose={this.close}
+          closeAfterDownload={closeAfterDownload}
           closeOnLoad={closeOnLoad}
           t={t}
         />
