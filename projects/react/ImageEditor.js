@@ -29,7 +29,7 @@ export default class extends Component {
 
   constructor(props) {
     super();
-
+    console.log(props, 'logging the props')
     const {
       processWithCloudimage, processWithFilerobot, processWithCloudService, uploadWithCloudimageLink, reduceBeforeEdit, cropBeforeEdit,
       watermark, imageSealing,
@@ -217,7 +217,7 @@ export default class extends Component {
   }
 
   onDownloadImage = () => {
-    const { onBeforeComplete } = this.props;
+    const { onBeforeComplete, closeAfterDownload } = this.props;
     const { downloadImage, getResultCanvas } = this.state;
     const canvas = getResultCanvas();
     const isDownload = onBeforeComplete ? onBeforeComplete({ status: 'before-complete', canvas }) : true;
@@ -230,7 +230,9 @@ export default class extends Component {
     } else {
       this.props.onComplete({ status: 'success', canvas });
 
-      if(this.props.closeAfterDownload) {
+      console.log(closeAfterDownload, 'logging closeAfterDownload')
+
+      if(closeAfterDownload) {
         this.props.onClose();
       }
     }
@@ -362,7 +364,7 @@ export default class extends Component {
       watermark,
       focusPoint
     } = this.state;
-    const { src, config, onClose, onComplete, closeOnLoad = true, t = {}, theme } = this.props;
+    const { src, config, onClose, onComplete, closeOnLoad = true, t = {}, theme, closeAfterDownload = true } = this.props;
     const imageParams = { effect, filter, crop, resize, rotate, flipX, flipY, adjust, correctionDegree };
     const headerProps = {
       t,

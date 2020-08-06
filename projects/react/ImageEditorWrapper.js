@@ -13,10 +13,9 @@ import { isServerSide } from './utils/is-server-side';
 
 class ImageEditorWrapper extends Component {
   _isMounted = false;
-
   constructor({ show = false, src = '', config = {} }) {
     super();
-
+    console.log(this.props, 'logging the props')
     config.translations = config.translations || {};
     config.language = (config.translations[config.language] || translations[config.language]) ? config.language : 'en';
     config.theme = config.theme || {};

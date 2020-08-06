@@ -121,6 +121,7 @@ var ImageEditorWrapper = /*#__PURE__*/function (_Component) {
       }
     });
 
+    console.log(_this.props, 'logging the props');
     _config.translations = _config.translations || {};
     _config.language = _config.translations[_config.language] || _i18n.default[_config.language] ? _config.language : 'en';
     _config.theme = _config.theme || {};

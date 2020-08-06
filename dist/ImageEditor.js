@@ -274,7 +274,9 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onDownloadImage", function () {
-      var onBeforeComplete = _this.props.onBeforeComplete;
+      var _this$props = _this.props,
+          onBeforeComplete = _this$props.onBeforeComplete,
+          closeAfterDownload = _this$props.closeAfterDownload;
       var _this$state3 = _this.state,
           downloadImage = _this$state3.downloadImage,
           getResultCanvas = _this$state3.getResultCanvas;
@@ -299,7 +301,9 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
           canvas: canvas
         });
 
-        if (_this.props.closeAfterDownload) {
+        console.log(closeAfterDownload, 'logging closeAfterDownload');
+
+        if (closeAfterDownload) {
           _this.props.onClose();
         }
       }
@@ -448,6 +452,7 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
       }
     });
 
+    console.log(_props, 'logging the props');
     var _props$config = _props.config,
         processWithCloudimage = _props$config.processWithCloudimage,
         _processWithFilerobot = _props$config.processWithFilerobot,
@@ -565,16 +570,18 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
           adjust = _this$state8.adjust,
           watermark = _this$state8.watermark,
           focusPoint = _this$state8.focusPoint;
-      var _this$props = this.props,
-          src = _this$props.src,
-          config = _this$props.config,
-          onClose = _this$props.onClose,
-          onComplete = _this$props.onComplete,
-          _this$props$closeOnLo = _this$props.closeOnLoad,
-          closeOnLoad = _this$props$closeOnLo === void 0 ? true : _this$props$closeOnLo,
-          _this$props$t = _this$props.t,
-          t = _this$props$t === void 0 ? {} : _this$props$t,
-          theme = _this$props.theme;
+      var _this$props2 = this.props,
+          src = _this$props2.src,
+          config = _this$props2.config,
+          onClose = _this$props2.onClose,
+          onComplete = _this$props2.onComplete,
+          _this$props2$closeOnL = _this$props2.closeOnLoad,
+          closeOnLoad = _this$props2$closeOnL === void 0 ? true : _this$props2$closeOnL,
+          _this$props2$t = _this$props2.t,
+          t = _this$props2$t === void 0 ? {} : _this$props2$t,
+          theme = _this$props2.theme,
+          _this$props2$closeAft = _this$props2.closeAfterDownload,
+          closeAfterDownload = _this$props2$closeAft === void 0 ? true : _this$props2$closeAft;
       var imageParams = {
         effect: effect,
         filter: filter,
