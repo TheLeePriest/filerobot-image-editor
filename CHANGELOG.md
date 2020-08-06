@@ -25,6 +25,10 @@ Types of changes:
 - ...
 
 -------------
+## 3.9.7 - 2020-08-06
+### Changed
+- Comment out hack in Caman lib to prevent CSP errors
+- Add optional `closeAfterDownload` prop to allow for preventing modal closing after download
 
 ## 3.9.6 - 2020-07-28
 ### Changed
