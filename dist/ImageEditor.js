@@ -293,7 +293,7 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
             canvas: canvas
           });
 
-          if (closeAfterDownload) {
+          if (closeAfterDownload === true) {
             _this.props.onClose();
           }
         });
@@ -303,7 +303,7 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
           canvas: canvas
         });
 
-        if (closeAfterDownload) {
+        if (closeAfterDownload === true) {
           _this.props.onClose();
         }
       }
@@ -452,7 +452,6 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
       }
     });
 
-    console.log(_props, 'logging the props');
     var _props$config = _props.config,
         processWithCloudimage = _props$config.processWithCloudimage,
         _processWithFilerobot = _props$config.processWithFilerobot,

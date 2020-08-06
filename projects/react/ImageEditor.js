@@ -29,7 +29,7 @@ export default class extends Component {
 
   constructor(props) {
     super();
-    console.log(props, 'logging the props')
+
     const {
       processWithCloudimage, processWithFilerobot, processWithCloudService, uploadWithCloudimageLink, reduceBeforeEdit, cropBeforeEdit,
       watermark, imageSealing,
@@ -225,14 +225,15 @@ export default class extends Component {
     if (isDownload) {
       downloadImage(() => {
         this.props.onComplete({ status: 'success', canvas });
-        if(closeAfterDownload) {
+
+        if(closeAfterDownload === true) {
           this.props.onClose();
         }
       });
     } else {
       this.props.onComplete({ status: 'success', canvas });
 
-      if(closeAfterDownload) {
+      if(closeAfterDownload === true) {
         this.props.onClose();
       }
     }
