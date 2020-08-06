@@ -225,12 +225,12 @@ export default class extends Component {
     if (isDownload) {
       downloadImage(() => {
         this.props.onComplete({ status: 'success', canvas });
-        this.props.onClose();
+        if(closeAfterDownload) {
+          this.props.onClose();
+        }
       });
     } else {
       this.props.onComplete({ status: 'success', canvas });
-
-      console.log(closeAfterDownload, 'logging closeAfterDownload')
 
       if(closeAfterDownload) {
         this.props.onClose();

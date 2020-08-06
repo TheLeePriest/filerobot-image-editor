@@ -293,15 +293,15 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
             canvas: canvas
           });
 
-          _this.props.onClose();
+          if (closeAfterDownload) {
+            _this.props.onClose();
+          }
         });
       } else {
         _this.props.onComplete({
           status: 'success',
           canvas: canvas
         });
-
-        console.log(closeAfterDownload, 'logging closeAfterDownload');
 
         if (closeAfterDownload) {
           _this.props.onClose();
