@@ -178,7 +178,9 @@ var ImageEditorWrapper = /*#__PURE__*/function (_Component) {
           onBeforeComplete = _this$props.onBeforeComplete,
           closeOnLoad = _this$props.closeOnLoad,
           _this$props$showInMod = _this$props.showInModal,
-          showInModal = _this$props$showInMod === void 0 ? true : _this$props$showInMod;
+          showInModal = _this$props$showInMod === void 0 ? true : _this$props$showInMod,
+          _this$props$closeAfte = _this$props.closeAfterDownload,
+          closeAfterDownload = _this$props$closeAfte === void 0 ? true : _this$props$closeAfte;
       if (!src || !isVisible || _isServerSide.isServerSide) return null;
       if (src instanceof Blob && config.processWithCloudimage) return null;
 
@@ -188,6 +190,7 @@ var ImageEditorWrapper = /*#__PURE__*/function (_Component) {
         onComplete: onComplete,
         onBeforeComplete: onBeforeComplete,
         onClose: this.close,
+        closeAfterDownload: closeAfterDownload,
         closeOnLoad: closeOnLoad,
         t: t
       }));

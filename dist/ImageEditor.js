@@ -299,7 +299,9 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
           canvas: canvas
         });
 
-        _this.props.onClose();
+        if (_this.props.closeAfterDownload) {
+          _this.props.onClose();
+        }
       }
     });
 
