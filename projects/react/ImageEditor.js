@@ -79,6 +79,12 @@ export default class extends Component {
     this._isMounted = false;
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.src !== prevProps.src) {
+      this.loadImage();
+    }
+  }
+
   loadImage = () => {
     let { src } = this.props;
     const { reduceBeforeEdit: { mode, widthLimit, heightLimit } = {}, watermark } = this.state;

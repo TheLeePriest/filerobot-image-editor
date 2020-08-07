@@ -525,6 +525,13 @@ var _default = (_temp = /*#__PURE__*/function (_Component) {
       this._isMounted = false;
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.src !== prevProps.src) {
+        this.loadImage();
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$state8 = this.state,
